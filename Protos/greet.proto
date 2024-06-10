@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+package greet;
+
+
+service UserService {
+  rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc Register (RegisterRequest) returns (RegisterResponse) {}
+  rpc CheckUserExists (CheckUserRequest) returns (CheckUserResponse) {}
+  rpc AssignToService (ServiceAssignmentRequest) returns (ServiceAssignmentResponse) {}
+  rpc UnassignFromService (UnassignRequest) returns (UnassignResponse) {}
+  rpc GetAssignedService (AssignedServiceRequest) returns (AssignedServiceResponse) {}
+  rpc SubscribeToService (SubscribeRequest) returns (SubscribeResponse) {}
+  rpc RequestNewTask (TaskRequest) returns (TaskResponse) {}
+  rpc CompleteTask (TaskCompletionRequest) returns (TaskCompletionResponse) {}
+
+  rpc DisplayServiceData (DisplayServiceRequest) returns (DisplayServiceResponse) {}
+  rpc AddService (AddServiceRequest) returns (AddServiceResponse) {}
+  rpc EditService (EditServiceRequest) returns (EditServiceResponse) {}
+  rpc DeleteService (DeleteServiceRequest) returns (DeleteServiceResponse) {}
+  rpc AddTask (AddTaskRequest) returns (AddTaskResponse) {}
+  rpc AssignServiceToMotorcycle (AssignServiceToMotorcycleRequest) returns (AssignServiceToMotorcycleResponse) {}
+  rpc AssignUserToService (AssignUserToServiceRequest) returns (AssignUserToServiceResponse) {}
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  enum UserType {
+    NOT_FOUND = 0;
+    ADMINISTRATOR = 1;
+    MOTORCYCLE = 2;
+  }
+  UserType type = 1;
+  string message = 2;
+  string assignedService = 3;
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  string service = 3;
+}
+
+message RegisterResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message CheckUserRequest {
+  string username = 1;
+}
+
+message CheckUserResponse {
+  bool exists = 1;
+}
+
+message ServiceAssignmentRequest {   
+  string serviceSymbol = 1;
+  string username = 2;
+}
+
+message ServiceAssignmentResponse {
+  string message = 1;
+}
+
+message UnassignRequest {
+    string username = 1;
+}
+
+message UnassignResponse {
+  string message = 1;
+}
+
+message AssignedServiceRequest {
+   string username = 1;
+}
+
+message AssignedServiceResponse {
+  string serviceSymbol = 1;
+}
+
+message SubscribeRequest {
+  string username = 2;
+  string serviceSymbol = 1;
+}
+
+message SubscribeResponse {
+  string message = 1;
+}
+
+message TaskRequest {
+  string username = 1;
+  string service = 2;
+}
+
+message TaskResponse {
+  string taskDescription = 1;
+}
+
+message TaskCompletionRequest {
+  string taskDescription = 1;
+  string service = 2;
+}
+
+message TaskCompletionResponse {
+  string message = 1;
+}
+
+message DisplayServiceRequest {
+    string serviceSymbol = 1;
+}
+
+message DisplayServiceResponse {
+   string serviceData = 1;
+}
+
+message AddServiceRequest {
+  string serviceName = 1;
+}
+
+message AddServiceResponse {
+  string message = 1;
+}
+
+message EditServiceRequest {
+  string serviceSymbol = 1;
+  string newServiceName = 2;
+}
+
+message EditServiceResponse {
+  string message = 1;
+}
+
+message DeleteServiceRequest {
+  string serviceSymbol = 1;
+}
+
+message DeleteServiceResponse {
+  string message = 1;
+}
+
+message AddTaskRequest {
+  string serviceSymbol = 1;
+  string taskDescription = 2;
+}
+
+message AddTaskResponse {
+  string message = 1;
+}
+
+message AssignServiceToMotorcycleRequest {
+  string serviceName = 1;
+  string motorcycleName = 2;
+}
+
+message AssignServiceToMotorcycleResponse {
+  string message = 1;
+}
+
+message AssignUserToServiceRequest {
+  string userId = 1;
+  string serviceName = 2;
+}
+
+message AssignUserToServiceResponse {
+  string message = 1;
+}

@@ -1,0 +1,9 @@
+TarefaID,Descricao,Estado,ClinteID
+SD_T1,Entregas na zona 1 da cidade,Nao alocado,Cl_NotAttributed
+SD_T2,Entregas na zona 2 da cidade,Nao alocado,Cl_NotAttributed
+SD_T3,Entregas na zona 3 da cidade,Nao alocado,Cl_NotAttributed
+SD_T4,Entrega da Encomenda X,Nao alocado,Cl_NotAttributed
+SD_T5,Recolha de encomendas na zona 1 da cidade,Nao alocado,Cl_NotAttributed
+SD_T6,Recolha de encomendas na zona 2 da cidade,Nao alocado,Cl_NotAttributed
+SD_T7,Recolha de encomendas na zona 3 da cidade,Nao alocado,Cl_NotAttributed
+Empty,Empty,Empty,Empty

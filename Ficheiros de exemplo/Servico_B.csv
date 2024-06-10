@@ -1,0 +1,9 @@
+TarefaID,Descricao,Estado,ClinteID
+SD_T1,Rondas na zona 1 da cidade,Nao alocado,Cl_NotAttributed
+SD_T2,Rondas na zona 2 da cidade,Nao alocado,Cl_NotAttributed
+SD_T3,Rondas na zona 3 da cidade,Nao alocado,Cl_NotAttributed
+SD_T4,Alcacao de seguranca no local X,Nao alocado,Cl_NotAttributed
+SD_T5,Alcacao de seguranca no local Y,Nao alocado,Cl_NotAttributed
+SD_T6,Alcacao de seguranca no local Z,Nao alocado,Cl_NotAttributed
+SD_T7,Intervencao no Edificio X,Nao alocado,Cl_NotAttributed
+Empty,Empty,Empty,Empty
